@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Island Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🏝️ Island Game</h1>
+    <div class="player-stats">
+      <span>🪙 <b id="coins">0</b></span>
+      <span>⭐ Level <b id="level">1</b></span>
+      <button id="fullscreenBtn">⛶</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h2>Welcome to Island Game!</h2>
+      <p>Choose a game and start playing.</p>
+      <input id="searchInput" type="search" placeholder="Search games...">
+    </section>
+
+    <section class="toolbar">
+      <button class="filter active" data-filter="all">All Games</button>
+      <button class="filter" data-filter="favorite">❤️ Favorites</button>
+      <button class="filter" data-filter="arcade">🎮 Arcade</button>
+      <button class="filter" data-filter="puzzle">🧩 Puzzle</button>
+    </section>
+
+    <section id="gamesGrid" class="games-grid"></section>
+
+    <section class="profile">
+      <h2>🏆 Your Progress</h2>
+      <p>Experience: <b id="xp">0</b> XP</p>
+      <div class="progress-track">
+        <div id="xpProgress" class="progress-fill"></div>
+      </div>
+      <h3>Achievements</h3>
+      <div id="achievements"></div>
+    </section>
+
+    <section class="backup">
+      <h2>💾 Save Your Progress</h2>
+      <button id="exportBtn">Export Backup</button>
+      <button id="importBtn">Import Backup</button>
+      <input id="importFile" type="file" accept=".json" hidden>
+      <button id="resetBtn" class="danger">Reset Progress</button>
+    </section>
+  </main>
+
+  <div id="gameModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="gameTitle">Game</h2>
+        <button id="closeGame">✕</button>
+      </div>
+      <div id="gameArea"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
